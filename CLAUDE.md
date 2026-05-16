@@ -1,11 +1,20 @@
 # gseed-design
 
-Design language token packs for g- projects. Each language is a directory with `tokens.css` (`:root` variables only) and `symbol.svg`.
+Design language packs for g- projects. Each language is a directory containing:
+- `tokens.css` — `:root` CSS custom properties only (colours, fonts, spacing). No components.
+- `symbol.svg` — identity mark for the language/project
 
-**Usage:** copy the language directory into your project's `static/css/` on setup. Extend with component styles per-project. Never import at runtime — copy on setup is the convention.
+**Usage:** copy the directory into your project's `static/css/` on setup. Extend with component styles per-project. Never import at runtime — copy on setup, source of truth stays here.
+
+**Lineage:** declare in `pyproject.toml` under `[tool.gcore]`:
+```toml
+[tool.gcore]
+design = "gseed-design/default@0.1.0"
+```
 
 ## Languages
-- `penman/` — "Engineering Calm". Warm off-white, navy accent, Newsreader + Inter + JetBrains Mono. Default for gabrielpenman.co.uk and g- tools.
+
+- `default/` — g-supersystem identity. Warm off-white, navy accent (#2d4a6b), Newsreader + Inter + JetBrains Mono. Used by all g- tools and gabrielpenman.co.uk.
 
 ## Adding a language
-New directory, `tokens.css` with `:root` vars, `symbol.svg`, entry here.
+New directory with `tokens.css` and `symbol.svg`, entry in this list.
