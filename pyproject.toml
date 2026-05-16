@@ -1,0 +1,4 @@
+[project]
+name = "gseed-design"
+version = "0.1.0"
+description = "Design language token packs for g- projects"
