@@ -48,7 +48,8 @@ link to enforce sync.
   required before any commercial/public surface ships it.
 - **React components don't fit the Flask/Jinja consumers.** Only the CSS layer +
   fonts + the two JS helpers port. The JSX/UI-kit/slides are reference.
-- **No identity mark yet.** No `symbol.svg`/favicon — to be added.
+- **Identity mark** — `default/symbol-{dark,light}.svg`: square tile, hairline
+  ring, hyphen in the highlight colour. First pass, not final.
 
 ## As a skill
 

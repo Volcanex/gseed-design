@@ -52,8 +52,9 @@ consumer's CSS and expect it to keep working.
 
 ## Open items
 
-- **Favicon / identity mark** — there is no `symbol.svg` yet (the old one was
-  the retired warm-paper mark). A square, hairline, monochrome mark to be added.
+- **Favicon / identity mark** — `default/symbol-dark.svg` and
+  `default/symbol-light.svg`: a square tile, hairline ring, hyphen as the
+  highlight hit (magenta on black / azure on paper). A first mark, not final.
 - **Minimal Mono licensing** — Atelier Olschinsky, **personal-use only**. A
   commercial license (`office@olschinsky.at`) is required before it ships on any
   commercial/public surface (e.g. gabrielpenman.com).
