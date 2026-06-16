@@ -1,0 +1,97 @@
+/* ============================================================
+   G — Design Language · BASE / ELEMENT DEFAULTS
+   Imported last. Applies the ground, the type, and the small
+   set of structural utilities the language leans on:
+   sideways text, the small-grid backdrop, hairline rules.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: var(--text-body-f);
+  letter-spacing: var(--ls-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+/* --- Theme islands ----------------------------------------
+   Any element carrying data-theme paints its own ground + text
+   so light and dark panels can sit side by side (zine spread). */
+[data-theme] {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* --- Display headings -------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-hot);
+  letter-spacing: var(--ls-display);
+  margin: 0;
+  text-transform: uppercase;
+}
+h1 { font: var(--text-title); }
+h2 { font: var(--text-section); }
+h3 { font: var(--text-sub); }
+
+p { margin: 0; text-wrap: pretty; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+code, kbd, samp { font-family: var(--font-mono); }
+
+hr {
+  border: 0;
+  border-top: var(--bw) solid var(--border);
+  margin: 0;
+}
+
+/* --- Uppercase mono label (the workhorse caption) --------- */
+.g-label {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  color: var(--text-muted);
+}
+
+/* --- Sideways microtype — the edge ticker ----------------- */
+.g-sideways {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-micro);
+  color: var(--text-muted);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+.g-sideways--ccw { writing-mode: vertical-rl; transform: rotate(180deg); }
+
+/* --- Small-grid backdrop ---------------------------------- */
+.g-grid-bg {
+  background-image:
+    linear-gradient(to right,  var(--g-line) var(--bw), transparent var(--bw)),
+    linear-gradient(to bottom, var(--g-line) var(--bw), transparent var(--bw));
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+/* --- Hairline frame --------------------------------------- */
+.g-frame { border: var(--bw) solid var(--border); }
+.g-frame-strong { border: var(--bw-strong) solid var(--border-strong); }
+
+/* --- The GABRIEL highlight --------------------------------
+   Signature treatment: the letters G·A·B·R·I·E·L burn blue,
+   every other glyph stays grey. Applied per-letter in markup
+   with .g-hot, or wrap a word in .g-name and let the helper
+   component split it. Here is the atom. */
+.g-hot  { color: var(--accent); }
+.g-cool { color: var(--text); }

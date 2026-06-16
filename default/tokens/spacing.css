@@ -1,0 +1,59 @@
+/* ============================================================
+   G — Design Language · SPACING, GRID & GEOMETRY TOKENS
+   Small grids. Right angles. Square corners. Irregular but
+   aligned. Spacing rides an 8px lattice; key blocks fall on
+   golden-ratio widths.
+   ============================================================ */
+:root {
+  /* --- 8px lattice -------------------------------------- */
+  --s-0:  0;     /* @kind spacing */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+
+  /* --- Grid -------------------------------------------- */
+  --grid-unit:   8px;     /* base lattice cell  @kind spacing */
+  --grid-cell:   64px;    /* small-grid module  @kind spacing */
+  --gutter:      24px;    /* @kind spacing */
+  --col:         12;      /* @kind other */
+
+  /* --- Golden ratio constants -------------------------- */
+  --phi:      1.618;      /* @kind other */
+  --phi-inv:  0.618;      /* @kind other */
+
+  /* --- Corners · RIGHT ANGLES. zero, always. ----------- */
+  --radius: 0px;
+
+  /* --- Borders ----------------------------------------- */
+  --bw:        1px;       /* hairline rule  @kind spacing */
+  --bw-strong: 2px;       /* active / emphasis rule  @kind spacing */
+
+  /* --- Sideways text helper (90° edge labels) ---------- */
+  --rotate-cw:  90deg;    /* @kind other */
+  --rotate-ccw: -90deg;   /* @kind other */
+
+  /* --- Motion · OS-precise, no bounce ------------------ */
+  --ease:       cubic-bezier(0.2, 0, 0, 1);    /* @kind other */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --dur-fast:   90ms;    /* @kind other */
+  --dur:        160ms;   /* @kind other */
+  --dur-slow:   280ms;   /* @kind other */
+
+  /* --- Elevation · flat. No drop shadows. Depth = lines.
+     The only "shadow" allowed is a hard 1px inset rule.   */
+  --shadow: none;
+  --inset-line: inset 0 0 0 1px var(--g-line);
+
+  /* --- Semantic aliases -------------------------------- */
+  --space-inline:  var(--s-3);
+  --space-stack:   var(--s-4);
+  --space-section: var(--s-9);
+  --pad-card:      var(--s-5);
+}

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Display — Minimal Mono" subtitle="Slab-mono titles. Black is loud, Bold is section, Regular is sub." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .line { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  .line:last-child { border-bottom: 0; }
+  .spec { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--text-faint); text-transform: uppercase; width: 110px; flex: none; }
+  .d { font-family: var(--font-display); text-transform: uppercase; color: var(--text-hot); letter-spacing: -.01em; line-height: .92; }
+</style>
+</head>
+<body>
+  <div class="line"><span class="spec">BLACK 900 · D1</span><span class="d" style="font-weight:900;font-size:56px">BASE</span></div>
+  <div class="line"><span class="spec">BLACK 900 · D2</span><span class="d" style="font-weight:900;font-size:40px">SYSTEM</span></div>
+  <div class="line"><span class="spec">BOLD 700 · D3</span><span class="d" style="font-weight:700;font-size:28px">SECTION HEAD</span></div>
+  <div class="line"><span class="spec">REG 400 · D4</span><span class="d" style="font-weight:400;font-size:20px">SUBHEAD LABEL</span></div>
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

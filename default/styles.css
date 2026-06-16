@@ -1,0 +1,13 @@
+/* ============================================================
+   G — Design Language
+   System Design Language Base · single entry point.
+   Consumers link THIS file only. Imports below reach every
+   token, font-face, and base rule shipped to consumers.
+   Order matters: fonts → tokens → base.
+   ============================================================ */
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/base.css";
+@import "tokens/selection.css";

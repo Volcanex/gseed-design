@@ -1,0 +1,35 @@
+<!-- @dsCard group="Type" viewport="700x200" name="Labels & Sideways Microtype" subtitle="Wide-tracked uppercase labels; vertical edge tickers." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 0; }
+  .wrap { display: flex; height: 200px; }
+  .edge { border-right: 1px solid var(--border); padding: 16px 10px; display: flex; align-items: center; }
+  .main { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .tag { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .18em; color: var(--text-muted); }
+  .tag--hot { color: var(--accent); }
+  .demoNote { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--text-faint); text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="edge"><span class="g-sideways">SYSTEM DESIGN LANGUAGE BASE · v0.1 · φ</span></div>
+    <div class="main">
+      <span class="demoNote">.g-label · LETTERSPACING 0.18em</span>
+      <div class="row">
+        <span class="tag">SOURCE 03 / 12</span>
+        <span class="tag">·</span>
+        <span class="tag tag--hot">φ-ALIGNED</span>
+        <span class="tag">·</span>
+        <span class="tag">NO SIGNAL</span>
+      </div>
+      <span class="demoNote">.g-sideways · VERTICAL-RL · 0.34em ↖ left edge</span>
+    </div>
+  </div>
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

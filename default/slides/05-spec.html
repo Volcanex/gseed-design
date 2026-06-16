@@ -1,0 +1,64 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Spec Slide" subtitle="φ-split: spec table left, swatch + status readout right." -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="slides.css">
+<style>
+  .sp-content { display: grid; grid-template-columns: 1.618fr 1fr; gap: 0; padding: 0 !important; }
+  .sp-left { padding: 48px 48px 40px; display: flex; flex-direction: column; gap: 22px; border-right: 1px solid var(--border); }
+  .sp-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 46px; letter-spacing: -0.02em; color: var(--text-hot); line-height: 0.9; }
+  .sp-title .hot { color: var(--accent); }
+  .sp-table { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+  .sp-row { display: grid; grid-template-columns: 140px 1fr auto; gap: 16px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--border); }
+  .sp-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
+  .sp-v { font-family: var(--font-body); font-size: 14px; color: var(--text); }
+  .sp-t { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; }
+  .sp-right { padding: 48px 40px; display: flex; flex-direction: column; gap: 0; }
+  .sp-swatches { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .sp-sw { height: 88px; position: relative; }
+  .sp-sw span { position: absolute; left: 10px; bottom: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; }
+  .sp-note { margin-top: auto; font-family: var(--font-body); font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="slide-rail"><span class="g-sideways">SPEC · 05 / 05</span></div>
+  <div class="slide-stage">
+    <div class="slide-meta slide-meta--top">
+      <span class="slide-mark"><span class="hot">G</span> / BASE</span>
+      <span>SPEC SHEET</span>
+    </div>
+    <div class="slide-content sp-content">
+      <div class="sp-left">
+        <span class="s-kicker">05 · TOKENS</span>
+        <h2 class="sp-title g-name">BASE<br>VALUES</h2>
+        <div class="sp-table">
+          <div class="sp-row"><span class="sp-k">GROUND</span><span class="sp-v">#131316 — the background, always</span><span class="sp-t">--g-black</span></div>
+          <div class="sp-row"><span class="sp-k">TEXT</span><span class="sp-v">#E2DCDE — running copy on black</span><span class="sp-t">--g-grey</span></div>
+          <div class="sp-row"><span class="sp-k">HIGHLIGHT</span><span class="sp-v">#FF4FD8 — a hit, never a fill</span><span class="sp-t">--g-blue</span></div>
+          <div class="sp-row"><span class="sp-k">HEAT</span><span class="sp-v">#FFFCFC — hot titles, emphasis</span><span class="sp-t">--g-paper</span></div>
+        </div>
+      </div>
+      <div class="sp-right">
+        <div class="sp-swatches">
+          <div class="sp-sw" style="background:#131316"><span style="color:var(--g-grey)">BLACK</span></div>
+          <div class="sp-sw" style="background:#e2dcde"><span style="color:var(--g-black)">GREY</span></div>
+          <div class="sp-sw" style="background:#ff4fd8"><span style="color:var(--g-black)">MAGENTA</span></div>
+          <div class="sp-sw" style="background:#fffcfc"><span style="color:var(--g-black)">PAPER</span></div>
+        </div>
+        <p class="sp-note">Four values, no more. Neutrals are opacity steps of grey. No gradients, ever.</p>
+      </div>
+    </div>
+    <div class="slide-meta slide-meta--bot">
+      <span>NO GRADIENTS · NO SHADOW</span>
+      <span><b>●</b> 05 / 05</span>
+    </div>
+  </div>
+  <div class="slide-rail slide-rail--r"><span class="g-sideways">SILKA MONO · φ</span></div>
+</div>
+<script src="../assets/g-name.js"></script>
+<script src="../assets/token-select.js"></script>
+</body>
+</html>

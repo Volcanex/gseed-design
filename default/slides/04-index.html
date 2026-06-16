@@ -1,0 +1,54 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Index Grid Slide" subtitle="Irregular-but-square module grid; indexed cells, one accented." -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="slides.css">
+<style>
+  .ix-content { gap: 26px; }
+  .ix-head { display: flex; align-items: flex-end; justify-content: space-between; }
+  .ix-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 52px; letter-spacing: -0.02em; color: var(--text-hot); line-height: 0.9; }
+  .ix-grid { flex: 1; display: grid; grid-template-columns: 1.618fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .ix-cell { background: var(--bg); padding: 20px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+  .ix-cell .n { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--text-faint); }
+  .ix-cell .h { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 30px; color: var(--text-hot); letter-spacing: -0.01em; line-height: 0.92; margin-top: auto; }
+  .ix-cell .d { font-family: var(--font-body); font-size: 12px; line-height: 1.45; color: var(--text-muted); }
+  .ix-cell.span2 { grid-row: span 2; }
+  .ix-cell.hot { outline: 1px solid var(--border-accent); outline-offset: -1px; }
+  .ix-cell.hot .h { color: var(--accent); }
+  .ix-cell .s-grid { background-size: 32px 32px; opacity: .5; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="slide-rail"><span class="g-sideways">INDEX · 04 / 05</span></div>
+  <div class="slide-stage">
+    <div class="slide-meta slide-meta--top">
+      <span class="slide-mark"><span class="hot">G</span> / BASE</span>
+      <span>FOUNDATIONS · 06</span>
+    </div>
+    <div class="slide-content ix-content">
+      <div class="ix-head">
+        <h2 class="ix-title g-name">THE<br>SYSTEM</h2>
+        <span class="g-label">IRREGULAR · BUT SQUARE</span>
+      </div>
+      <div class="ix-grid">
+        <div class="ix-cell span2 hot"><div class="s-grid"></div><span class="n" style="position:relative">01</span><span class="h" style="position:relative">FOUR<br>VALUES</span><span class="d" style="position:relative">Black ground, grey text, magenta + white hits.</span></div>
+        <div class="ix-cell"><span class="n">02</span><span class="h">MONO</span><span class="d">Two families.</span></div>
+        <div class="ix-cell"><span class="n">03</span><span class="h">φ 1.618</span><span class="d">Golden split.</span></div>
+        <div class="ix-cell"><span class="n">04</span><span class="h">0px</span><span class="d">Right angles.</span></div>
+        <div class="ix-cell"><span class="n">05</span><span class="h">1px</span><span class="d">Hairlines, no shadow.</span></div>
+      </div>
+    </div>
+    <div class="slide-meta slide-meta--bot">
+      <span>EVERY EDGE ON THE LATTICE</span>
+      <span><b>●</b> 04 / 05</span>
+    </div>
+  </div>
+  <div class="slide-rail slide-rail--r"><span class="g-sideways">8PX · 64PX · φ</span></div>
+</div>
+<script src="../assets/g-name.js"></script>
+<script src="../assets/token-select.js"></script>
+</body>
+</html>

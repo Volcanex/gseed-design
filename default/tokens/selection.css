@@ -1,0 +1,25 @@
+/* ============================================================
+   G — Design Language · TOKEN SELECTION
+   Highlighting text should look like LLM tokens. Selection is
+   styled PER element via ::selection, so text pre-wrapped into
+   .tok-N spans (see assets/token-select.js) highlights in a
+   cycling palette of magentas + nearby blues/purples — one
+   colour per word, or per 4-char chunk for long words.
+   Untokenised text falls back to the single-magenta default.
+   ============================================================ */
+:root {
+  --sel-0: #ff4fd8;  /* magenta (base accent) */
+  --sel-1: #ff7ad1;  /* pink-magenta          */
+  --sel-2: #c95cff;  /* magenta-purple        */
+  --sel-3: #9a73ff;  /* purple                */
+  --sel-4: #6f8cff;  /* blue-purple           */
+  --sel-5: #4fc4ff;  /* cerulean-blue         */
+}
+
+/* literal hex (some engines drop custom props inside ::selection) */
+.tok-0::selection { background: #ff4fd8; color: #131316; }
+.tok-1::selection { background: #ff7ad1; color: #131316; }
+.tok-2::selection { background: #c95cff; color: #131316; }
+.tok-3::selection { background: #9a73ff; color: #131316; }
+.tok-4::selection { background: #6f8cff; color: #131316; }
+.tok-5::selection { background: #4fc4ff; color: #131316; }

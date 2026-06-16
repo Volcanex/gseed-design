@@ -1,4 +1,7 @@
 [project]
 name = "gseed-design"
-version = "0.1.0"
-description = "Design language token packs for g- projects"
+version = "1.0.0"
+description = "G — Design Language: the system-wide visual grammar for g- projects (OS-meets-zine; black ground, monospaced, one highlight)"
+
+[tool.gcore]
+inherits_from = ["gseed"]

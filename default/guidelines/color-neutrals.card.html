@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutral Steps" subtitle="No new hues — neutrals are opacity steps of grey on black." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px; }
+  .strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; }
+  .cell { height: 64px; border: 1px solid var(--border); position: relative; }
+  .cell span { position: absolute; left: 8px; bottom: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--text-muted); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--text-faint); text-transform: uppercase; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="lbl">GREY · α STEPS &nbsp;·&nbsp; HAIRLINE → DIM → READABLE</div>
+  <div class="strip">
+    <div class="cell" style="background:var(--g-fill)"><span>05</span></div>
+    <div class="cell" style="background:var(--g-fill-2)"><span>09</span></div>
+    <div class="cell" style="background:var(--g-line)"><span>16</span></div>
+    <div class="cell" style="background:var(--g-dimmer)"><span>28</span></div>
+    <div class="cell" style="background:var(--g-dim)"><span>45</span></div>
+    <div class="cell" style="background:var(--g-grey)"><span style="color:var(--g-black)">100</span></div>
+  </div>
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

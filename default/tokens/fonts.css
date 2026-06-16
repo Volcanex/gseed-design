@@ -1,0 +1,38 @@
+/* ============================================================
+   G — Design Language · @font-face declarations
+   Minimal Mono (Atelier Olschinsky) — display / titles
+   Silka Mono (Atipo) — body / running text
+   ============================================================ */
+
+/* --- Minimal Mono : display, three weights --------------- */
+@font-face {
+  font-family: "Minimal Mono";
+  src: url("../assets/fonts/MinimalMono-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minimal Mono";
+  src: url("../assets/fonts/MinimalMono-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minimal Mono";
+  src: url("../assets/fonts/MinimalMono-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Silka Mono : body, single regular weight ------------ */
+@font-face {
+  font-family: "Silka Mono";
+  src: url("../assets/fonts/SilkaMono-Regular.woff2") format("woff2"),
+       url("../assets/fonts/SilkaMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

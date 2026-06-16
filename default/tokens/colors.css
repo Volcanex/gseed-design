@@ -1,0 +1,113 @@
+/* ============================================================
+   G — Design Language · COLOR TOKENS
+   A four-value system. Black is the ground. Everything else
+   sits on it. No gradients, no tints beyond these.
+   ============================================================ */
+:root {
+  /* --- Raw palette (the only four colors) --------------- */
+  --g-black:  #131316;  /* ground — the background, always */
+  --g-grey:   #e2dcde;  /* text on black — running copy     */
+  --g-blue:   #ff4fd8;  /* highlight — strong magenta, on black (trial) */
+  --g-paper:  #fffcfc;  /* highlight — emphasis, titles hot */
+
+  /* Ink blue — the LIGHT-mode highlight, from gabrielpenman.co.uk.
+     Azure sitting between cobalt and cerulean. NOTE: inferred; swap
+     this one value for the exact brand hex. */
+  --g-blue-ink: #1a6fe6; /* @kind color */
+
+  /* --- Derived neutrals (opacity steps of grey/paper) ---
+     Used for hairlines, dimmed labels, sideways microtype.
+     Kept as rgba of the paper value so they read on black. */
+  --g-line:        rgba(226, 220, 222, 0.16);  /* grid hairline */
+  --g-line-strong: rgba(226, 220, 222, 0.32);  /* active rule   */
+  --g-dim:         rgba(226, 220, 222, 0.45);  /* muted micro   */
+  --g-dimmer:      rgba(226, 220, 222, 0.28);  /* faintest      */
+  --g-fill:        rgba(226, 220, 222, 0.05);  /* panel wash    */
+  --g-fill-2:      rgba(226, 220, 222, 0.09);  /* raised panel  */
+  --g-blue-wash:   rgba(255, 79, 216, 0.14);   /* accent fill   */
+  --g-blue-line:   rgba(255, 79, 216, 0.45);   /* accent rule   */
+
+  /* --- Semantic aliases --------------------------------- */
+  --bg:            var(--g-black);
+  --bg-panel:      var(--g-fill);
+  --bg-panel-2:    var(--g-fill-2);
+  --text:          var(--g-grey);   /* default running text   */
+  --text-hot:      var(--g-paper);  /* emphasis / titles      */
+  --text-muted:    var(--g-dim);    /* captions, microtype    */
+  --text-faint:    var(--g-dimmer);
+  --accent:        var(--g-blue);
+  --accent-on:     var(--g-black);  /* text on a blue fill    */
+  --border:        var(--g-line);
+  --border-strong: var(--g-line-strong);
+  --border-accent: var(--g-blue-line);
+
+  --selection-bg:  var(--g-blue);
+  --selection-fg:  var(--g-black);
+}
+
+/* ============================================================
+   THEME SCOPES — the language is bi-modal and MIXABLE.
+   Dark (paper-on-black) is the default :root. Light (ink-on-
+   paper) flips the ground and swaps the cyan highlight for the
+   ink blue. Both are declared as attribute scopes so a panel
+   can re-assert either context anywhere — black spreads and
+   paper spreads sitting side by side, zine-style.
+   Set data-theme="light" | "dark" on any element (or <html>).
+   ============================================================ */
+
+/* --- LIGHT · ink on paper, azure highlight ---------------- */
+[data-theme="light"] {
+  /* derived neutrals become opacity steps of BLACK on paper */
+  --g-line:        rgba(19, 19, 22, 0.14);
+  --g-line-strong: rgba(19, 19, 22, 0.30);
+  --g-dim:         rgba(19, 19, 22, 0.52);
+  --g-dimmer:      rgba(19, 19, 22, 0.36);
+  --g-fill:        rgba(19, 19, 22, 0.035);
+  --g-fill-2:      rgba(19, 19, 22, 0.065);
+  --g-blue-wash:   rgba(26, 111, 230, 0.10);
+  --g-blue-line:   rgba(26, 111, 230, 0.45);
+
+  --bg:            var(--g-paper);
+  --bg-panel:      var(--g-fill);
+  --bg-panel-2:    var(--g-fill-2);
+  --text:          rgba(19, 19, 22, 0.84);  /* soft ink body  */
+  --text-hot:      var(--g-black);          /* black titles   */
+  --text-muted:    var(--g-dim);
+  --text-faint:    var(--g-dimmer);
+  --accent:        var(--g-blue-ink);       /* the site blue  */
+  --accent-on:     var(--g-paper);          /* paper on blue  */
+  --border:        var(--g-line);
+  --border-strong: var(--g-line-strong);
+  --border-accent: var(--g-blue-line);
+
+  --selection-bg:  var(--g-blue-ink);
+  --selection-fg:  var(--g-paper);
+}
+
+/* --- DARK · re-assert the default inside a light region --- */
+[data-theme="dark"] {
+  --g-line:        rgba(226, 220, 222, 0.16);
+  --g-line-strong: rgba(226, 220, 222, 0.32);
+  --g-dim:         rgba(226, 220, 222, 0.45);
+  --g-dimmer:      rgba(226, 220, 222, 0.28);
+  --g-fill:        rgba(226, 220, 222, 0.05);
+  --g-fill-2:      rgba(226, 220, 222, 0.09);
+  --g-blue-wash:   rgba(255, 79, 216, 0.14);
+  --g-blue-line:   rgba(255, 79, 216, 0.45);
+
+  --bg:            var(--g-black);
+  --bg-panel:      var(--g-fill);
+  --bg-panel-2:    var(--g-fill-2);
+  --text:          var(--g-grey);
+  --text-hot:      var(--g-paper);
+  --text-muted:    var(--g-dim);
+  --text-faint:    var(--g-dimmer);
+  --accent:        var(--g-blue);
+  --accent-on:     var(--g-black);
+  --border:        var(--g-line);
+  --border-strong: var(--g-line-strong);
+  --border-accent: var(--g-blue-line);
+
+  --selection-bg:  var(--g-blue);
+  --selection-fg:  var(--g-black);
+}

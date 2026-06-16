@@ -1,0 +1,36 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Highlight In Use" subtitle="Highlight only — a hit, a rule, a cursor, a state. Never a fill." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px; display: flex; gap: 16px; align-items: stretch; }
+  .demo { border: 1px solid var(--border); padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--text-faint); text-transform: uppercase; }
+  .big { font-family: var(--font-display); font-weight: 900; font-size: 30px; text-transform: uppercase; color: var(--text); letter-spacing: -.01em; }
+  .rule { height: 2px; background: var(--accent); width: 60%; }
+  .cur { font-family: var(--font-mono); font-size: 14px; color: var(--text); }
+  .cur b { color: var(--accent); font-weight: 400; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .sel { font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  .sel mark { background: var(--g-blue); color: var(--g-black); }
+  .pill { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--border-accent); padding: 4px 8px; }
+</style>
+</head>
+<body>
+  <div class="demo">
+    <span class="lbl">A · KEY LETTER</span>
+    <div class="big"><span style="color:var(--accent)">G</span>RID</div>
+    <div class="rule"></div>
+    <span class="lbl">B · RULE</span>
+  </div>
+  <div class="demo">
+    <span class="lbl">C · CURSOR + STATE</span>
+    <div class="cur">READY<b>▌</b></div>
+    <div class="sel">SOURCE <mark>SELECTED</mark> 03</div>
+    <span class="pill">● LIVE</span>
+  </div>
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

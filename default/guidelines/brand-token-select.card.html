@@ -1,0 +1,40 @@
+<!-- @dsCard group="Brand" viewport="700x280" name="Token Selection" subtitle="Highlighting text reads like LLM tokens — magentas, blues, purples." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--text-faint); }
+  /* static preview of what a selection looks like */
+  .strip { display: flex; flex-wrap: wrap; gap: 3px; }
+  .chip { font-family: var(--font-mono); font-size: 18px; letter-spacing: .02em; color: #131316; padding: 4px 6px; }
+  .c0 { background: var(--sel-0); } .c1 { background: var(--sel-1); }
+  .c2 { background: var(--sel-2); } .c3 { background: var(--sel-3); }
+  .c4 { background: var(--sel-4); } .c5 { background: var(--sel-5); }
+  .try { border: 1px solid var(--border); padding: 16px; }
+  .try p { font: var(--text-lead); color: var(--text); }
+  .hint { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .hint b { animation: bl 1s steps(1) infinite; }
+  @keyframes bl { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+  <span class="lbl">PREVIEW · ONE COLOUR PER WORD / 4-CHAR CHUNK</span>
+  <div class="strip" data-no-tokens>
+    <span class="chip c0">GABR</span><span class="chip c1">IEL</span>
+    <span class="chip c2">DESI</span><span class="chip c3">GN</span>
+    <span class="chip c4">LANG</span><span class="chip c5">UAGE</span>
+    <span class="chip c0">IS</span><span class="chip c1">BUIL</span><span class="chip c2">T</span>
+    <span class="chip c3">FROM</span><span class="chip c4">TOKE</span><span class="chip c5">NS</span>
+  </div>
+
+  <span class="hint">▌ SELECT THE TEXT BELOW <b>_</b></span>
+  <div class="try">
+    <p>The base treats every sentence as a stream of tokens. Drag across this paragraph and the selection breaks into magentas, purples and blues — one colour per word, switching every four letters once a word runs long.</p>
+  </div>
+
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

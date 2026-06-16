@@ -1,0 +1,43 @@
+<!-- @dsCard group="Brand" viewport="700x260" name="OS-Zine Composition" subtitle="Loud block, sideways edge type, small grid — irregular but square." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 0; }
+  .stage { position: relative; height: 260px; display: grid; grid-template-columns: 28px 1.618fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .col { background: var(--bg); position: relative; overflow: hidden; }
+  .rail { display: flex; align-items: center; justify-content: center; padding: 8px 0; }
+  .rail span { writing-mode: vertical-rl; font-family: var(--font-mono); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: var(--text-muted); }
+  .hero { padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+  .gridbg { position: absolute; inset: 0; background-image:
+      linear-gradient(to right, var(--g-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--g-line) 1px, transparent 1px);
+    background-size: 32px 32px; }
+  .title { position: relative; font-family: var(--font-display); font-weight: 900; font-size: 46px; line-height: .9; text-transform: uppercase; color: var(--text-hot); letter-spacing: -.02em; }
+  .title b { color: var(--accent); font-weight: 900; }
+  .idx { position: relative; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--text-faint); text-transform: uppercase; }
+  .side { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .micro { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+  .cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--accent); text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="col rail"><span>SYSTEM · v0.1 · φ 1.618 ·</span></div>
+    <div class="col hero">
+      <span class="idx">01 / 12 · BASE</span>
+      <div class="title g-name">GRID<br>LOCKED</div>
+      <span class="idx">RIGHT ANGLES · NO RADIUS</span>
+    </div>
+    <div class="col side">
+      <div class="gridbg"></div>
+      <span class="cap">● MICROGRAPHIC</span>
+      <p class="micro">Irregular blocks, regular geometry. Every edge lands on the lattice. Small text rides the margins.</p>
+    </div>
+  </div>
+  <script src="../assets/g-name.js"></script>
+  <script src="../assets/token-select.js"></script>
+</body>
+</html>

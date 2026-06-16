@@ -1,0 +1,61 @@
+/* ============================================================
+   SLIDES — shared frame for G language sample slides.
+   Fixed 1280×720 canvas, black ground, hairline margins,
+   sideways edge ticker. Each slide HTML links styles.css + this.
+   ============================================================ */
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: var(--bg);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+}
+
+/* edge rails */
+.slide-rail {
+  border-right: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; padding: 24px 0;
+}
+.slide-rail--r { border-right: 0; border-left: 1px solid var(--border); }
+.slide-rail .g-sideways { letter-spacing: 0.34em; }
+
+.slide-stage { position: relative; display: flex; flex-direction: column; }
+
+/* top + bottom meta strips */
+.slide-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px; height: 56px; flex: none;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.slide-meta--top { border-bottom: 1px solid var(--border); }
+.slide-meta--bot { border-top: 1px solid var(--border); margin-top: auto; }
+.slide-meta b { color: var(--accent); font-weight: 400; }
+
+.slide-mark {
+  font-family: var(--font-display); font-weight: 900; letter-spacing: -0.01em;
+  color: var(--text-hot); font-size: 14px;
+}
+.slide-mark .hot { color: var(--accent); }
+
+.slide-content { flex: 1; min-height: 0; padding: 44px 56px; display: flex; flex-direction: column; }
+
+/* ---- shared type ---- */
+.s-kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.s-title {
+  font-family: var(--font-display); font-weight: 900; text-transform: uppercase;
+  letter-spacing: -0.025em; line-height: 0.86; color: var(--text-hot);
+}
+.s-lead { font: var(--text-lead); color: var(--text); max-width: 56ch; }
+
+/* grid backdrop helper */
+.s-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--g-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--g-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
