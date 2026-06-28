@@ -99,6 +99,11 @@ gradients.
 - Composition is **modular and irregular** — blocks of differing size and offset
   — but every block is a **square-cornered rectangle** whose edges snap to the
   grid. Irregular *arrangement*, regular *geometry*.
+- To make a block actually land on a `.g-grid-bg` backdrop, size it in **whole
+  cells**: the `.g-cells` utility (`tokens/base.css`) lays out a row of tiles
+  `--cell-w × --cell-h` cells each, hairline-divided, so every edge and divider
+  falls on a line. Pad the parent by a cell multiple so the row's origin is on a
+  line too. The console UI kit's metric tiles are the worked example.
 - Use **golden-ratio splits** for primary divisions (`--phi` / `--phi-inv`): a
   big display zone and a slim φ-minor margin/rail.
 - **Sideways text on the edges** is a core move: vertical microtype (tickers,

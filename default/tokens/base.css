@@ -89,6 +89,28 @@ hr {
   background-position: 0 0;
 }
 
+/* --- Grid-cell tiles --------------------------------------
+   A single row of blocks sized in whole grid cells, so on a
+   .g-grid-bg backdrop every edge and divider lands on a line.
+   Pad the parent by a cell multiple so the row's origin is on a
+   line too. Tune per instance with --cols (how many blocks),
+   --cell-w / --cell-h (cells per block). Outline (not border)
+   frames it so the cells keep their exact size; the dividers sit
+   on the column boundaries = on the grid lines. */
+.g-cells {
+  --cols:   3;
+  --cell-w: 3;
+  --cell-h: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), calc(var(--grid-cell) * var(--cell-w)));
+  grid-auto-rows: calc(var(--grid-cell) * var(--cell-h));
+  width: fit-content;
+  outline: var(--bw) solid var(--border);
+  outline-offset: calc(-1 * var(--bw));
+}
+.g-cells > * { padding: var(--pad-card); }
+.g-cells > * + * { border-left: var(--bw) solid var(--border); }
+
 /* --- Hairline frame --------------------------------------- */
 .g-frame { border: var(--bw) solid var(--border); }
 .g-frame-strong { border: var(--bw-strong) solid var(--border-strong); }

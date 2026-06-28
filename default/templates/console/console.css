@@ -111,8 +111,11 @@
 }
 .cz-hero-lead { font: var(--text-lead); color: var(--text); max-width: 46ch; }
 
-.cz-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.cz-tile { background: var(--bg); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 116px; }
+/* Grid-snapped tiles — the .g-cells pattern (see tokens/base.css): each tile
+   spans whole grid cells (2×2 here) so edges + dividers land on the backdrop. */
+.cz-tiles { display: grid; grid-template-columns: repeat(3, calc(var(--grid-cell) * 2)); grid-auto-rows: calc(var(--grid-cell) * 2); width: fit-content; outline: 1px solid var(--border); outline-offset: -1px; }
+.cz-tile { background: var(--bg); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.cz-tile + .cz-tile { border-left: 1px solid var(--border); }
 .cz-tile-n { font-family: var(--font-display); font-weight: 900; font-size: 28px; color: var(--text-hot); }
 .cz-tile-l { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-top: auto; }
 .cz-tile-l b { color: var(--accent); font-weight: 400; }
