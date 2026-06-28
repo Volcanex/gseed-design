@@ -18,8 +18,9 @@
   /* --- Derived neutrals (opacity steps of grey/paper) ---
      Used for hairlines, dimmed labels, sideways microtype.
      Kept as rgba of the paper value so they read on black. */
-  --g-line:        rgba(226, 220, 222, 0.16);  /* grid hairline */
+  --g-line:        rgba(226, 220, 222, 0.16);  /* hairline rule */
   --g-line-strong: rgba(226, 220, 222, 0.32);  /* active rule   */
+  --g-grid:        rgba(226, 220, 222, 0.05);  /* grid backdrop — fainter than a rule */
   --g-dim:         rgba(226, 220, 222, 0.45);  /* muted micro   */
   --g-dimmer:      rgba(226, 220, 222, 0.28);  /* faintest      */
   --g-fill:        rgba(226, 220, 222, 0.05);  /* panel wash    */
@@ -60,6 +61,7 @@
   /* derived neutrals become opacity steps of BLACK on paper */
   --g-line:        rgba(19, 19, 22, 0.14);
   --g-line-strong: rgba(19, 19, 22, 0.30);
+  --g-grid:        rgba(19, 19, 22, 0.045);
   --g-dim:         rgba(19, 19, 22, 0.52);
   --g-dimmer:      rgba(19, 19, 22, 0.36);
   --g-fill:        rgba(19, 19, 22, 0.035);
@@ -88,6 +90,7 @@
 [data-theme="dark"] {
   --g-line:        rgba(226, 220, 222, 0.16);
   --g-line-strong: rgba(226, 220, 222, 0.32);
+  --g-grid:        rgba(226, 220, 222, 0.05);
   --g-dim:         rgba(226, 220, 222, 0.45);
   --g-dimmer:      rgba(226, 220, 222, 0.28);
   --g-fill:        rgba(226, 220, 222, 0.05);

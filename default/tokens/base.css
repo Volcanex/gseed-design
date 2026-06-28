@@ -76,12 +76,17 @@ hr {
 }
 .g-sideways--ccw { writing-mode: vertical-rl; transform: rotate(180deg); }
 
-/* --- Small-grid backdrop ---------------------------------- */
+/* --- Small-grid backdrop ----------------------------------
+   Uses --g-grid (much fainter than a hairline rule) so it reads as
+   texture, not structure. Cells are --grid-cell (64px) from the box
+   origin: pad a container by a grid-cell multiple and its content edges
+   land on the lines. */
 .g-grid-bg {
   background-image:
-    linear-gradient(to right,  var(--g-line) var(--bw), transparent var(--bw)),
-    linear-gradient(to bottom, var(--g-line) var(--bw), transparent var(--bw));
+    linear-gradient(to right,  var(--g-grid) var(--bw), transparent var(--bw)),
+    linear-gradient(to bottom, var(--g-grid) var(--bw), transparent var(--bw));
   background-size: var(--grid-cell) var(--grid-cell);
+  background-position: 0 0;
 }
 
 /* --- Hairline frame --------------------------------------- */
